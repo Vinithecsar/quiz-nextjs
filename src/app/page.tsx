@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Questionario } from "@/components/Questionario";
 import { useRouter } from "next/navigation";
 
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = "https://quiz-nextjs-rouge.vercel.app/api";
 
 export default function Home() {
   const router = useRouter();
