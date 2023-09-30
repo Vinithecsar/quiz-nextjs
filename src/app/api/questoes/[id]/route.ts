@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import questoes from "../../bancoDeQuestoes";
 
 async function Getquestoes(req: Request, { params }: any) {
+  const newHeaders = new Headers(req.headers);
+  newHeaders.set("Access-Control-Allow-Origin", "*");
+
   const unicaQuestaoOuNada = questoes.filter(
     (questao) => questao.id === +params.id
   );
@@ -11,6 +14,7 @@ async function Getquestoes(req: Request, { params }: any) {
     // const obj = questaoSelecionada.responderCom(0).converterParaObjeto()
     return NextResponse.json(questaoSelecionada.converterParaObjeto(), {
       status: 200,
+      headers: newHeaders,
     });
   } else {
     return new Response(null, {
