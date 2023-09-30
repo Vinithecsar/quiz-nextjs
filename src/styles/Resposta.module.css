@@ -1,0 +1,17 @@
+.conteudo {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.respostaRevelada {
+  transform: rotateY(180deg);
+}
+
+.visibilidade {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.verso {
+  transform: rotateY(180deg);
+}
